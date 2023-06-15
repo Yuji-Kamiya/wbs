@@ -3,7 +3,7 @@ Sub SetConditionalFormatting()
     Dim ws As Worksheet
     
     ' 適切なワークシートを設定します（ワークシート名を必要に応じて変更してください）
-    Set ws = ThisWorkbook.Sheets("Sheet1")
+    Set ws = ThisWorkbook.Sheets("WBS")
     
     Set rng1 = ws.Range("$M$5:$GJ$2000")
     Set rng2 = ws.Range("$F$5:$F$2000")
@@ -14,12 +14,12 @@ Sub SetConditionalFormatting()
     
     ' 条件１
     With rng1.FormatConditions.Add(Type:=xlExpression, Formula1:="=AND($K5<>"""",M$2>=$K5,OR(M$2<=$L5,AND($L5="""",M$2<=TODAY())))")
-        .Interior.Color = RGB(0, 0, 255) ' 青色
+        .Interior.Color = RGB(30, 80, 181) ' 青色
     End With
     
     ' 条件２
     With rng1.FormatConditions.Add(Type:=xlExpression, Formula1:="=AND($J5<>"""",M$2>=$I5,M$2<=$J5)")
-        .Interior.Color = RGB(128, 128, 192) ' 灰青色
+        .Interior.Color = RGB(218, 227, 243) ' 灰青色
     End With
     
     ' 条件３
@@ -49,7 +49,7 @@ Sub SetConditionalFormatting()
     
     ' 条件８
     With rng3.FormatConditions.Add(Type:=xlExpression, Formula1:="=C4=C5")
-        .Font.Color = RGB(255, 255, 255) ' 白色
+        .Font.Color = RGB(240, 240, 240) ' 白色
     End With
 
 End Sub
